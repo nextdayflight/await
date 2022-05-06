@@ -118,11 +118,6 @@ func indexOf(l []string, s string) int {
 	return -1
 }
 
-func stdinFromPipe() bool {
-	stat, _ := os.Stdin.Stat()
-	return (stat.Mode() & os.ModeNamedPipe) != 0
-}
-
 func readFromFile(filepath string) ([]string, error) {
 	f := os.Stdin
 	if filepath != "-" {

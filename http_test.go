@@ -22,7 +22,8 @@ func TestTLSSkipVerify(t *testing.T) {
 	shutdownServer := setupHttpsServer(t)
 	defer shutdownServer()
 
-	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
 
 	resources, _ := parseResources([]string{
 		"https://localhost:55372",
