@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/betalo-sweden/await.svg?branch=master)](https://travis-ci.org/betalo-sweden/await)
+[![Build Status](https://travis-ci.org/djui/await.svg?branch=master)](https://travis-ci.org/djui/await)
 
 # This repository is no longer maintained.
 
@@ -23,11 +23,11 @@ resources became available.
 
 ## Installation
 
-    go get -u github.com/betalo-sweden/await
+    go get -u github.com/djui/await
 
 or
 
-    curl -s -f -L -o await https://github.com/betalo-sweden/await/releases/download/v0.4.0/await-linux-amd64
+    curl -s -f -L -o await https://github.com/djui/await/releases/download/v1.f2.0/await-linux-amd64
     chmod +x await
 
 
