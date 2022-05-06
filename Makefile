@@ -4,10 +4,6 @@ all: build
 .PHONY: build
 build:
 	go build -v github.com/djui/await
-.PHONY: deps
-deps:
-	curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-	dep ensure
 
 .PHONY: lint
 lint:
