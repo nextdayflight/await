@@ -7,25 +7,7 @@ build:
 
 .PHONY: lint
 lint:
-	@if [ $$(gofmt -l . | wc -l) != 0 ]; then \
-	    echo "gofmt: code not formatted"; \
-	    gofmt -l . | grep -v vendor/; \
-	    exit 1; \
-	fi
-
-	@gometalinter \
-	             --vendor \
-	             --tests \
-	             --disable=gocyclo \
-	             --disable=dupl \
-	             --disable=deadcode \
-	             --disable=gotype \
-	             --disable=maligned \
-	             --disable=interfacer \
-	             --disable=varcheck \
-	             --disable=gosec \
-	             --disable=megacheck \
-	             ./...
+	docker run --rm -v $(CURDIR):/app -w /app golangci/golangci-lint:v1.45.2 golangci-lint run -v
 
 .PHONY: test
 test:
