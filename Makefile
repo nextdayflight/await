@@ -15,5 +15,6 @@ test:
 
 .PHONY: rel
 rel:
-	GOOS=darwin GOARCH=amd64 go build -o await-darwin-amd64 github.com/betalo-sweden/await
-	GOOS=linux  GOARCH=amd64 go build -o await-linux-amd64  github.com/betalo-sweden/await
+	GOOS=darwin GOARCH=amd64 go build -o ./bin/await-darwin-amd64 github.com/djui/await
+	GOOS=linux  GOARCH=amd64 go build -o ./bin/await-linux-amd64  github.com/djui/await
+	GOOS=linux  GOARCH=amd64 CGO_ENABLED=0 go build -o ./bin/await-linux-amd64-alpine -installsuffix cgo github.com/djui/await
